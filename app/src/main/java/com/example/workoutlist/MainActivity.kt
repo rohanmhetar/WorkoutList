@@ -20,12 +20,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.verticalRecyclerView.adapter = CardAdapter(applicationContext)
+        binding.workoutRecyclerView.adapter = CardAdapter(applicationContext)
 
         // Specify fixed size to improve performance
-        binding.verticalRecyclerView.setHasFixedSize(true)
+        binding.workoutRecyclerView.setHasFixedSize(true)
 
-        // Enable up button for backward navigation
-        // supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.addWorkoutBtn.setOnClickListener { launchAddWorkout() }
+    }
+
+    private fun launchAddWorkout() {
+        listIntent = Intent(this, NewWorkoutActivity::class.java)
+        startActivity(listIntent)
     }
 }

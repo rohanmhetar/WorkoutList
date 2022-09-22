@@ -1,14 +1,20 @@
 package com.example.workoutlist
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.delay
+
 
 class SplashActivity : AppCompatActivity() {
+    private lateinit var listIntent: Intent
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         supportActionBar?.hide()
 
-        // final Intent i = new Intent(SplashActivity, MainActivity)
+        listIntent = Intent(this, MainActivity::class.java)
+        startActivity(listIntent)
     }
 }
