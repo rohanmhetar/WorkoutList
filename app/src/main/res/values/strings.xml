@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Workout List</string>
-    <string name="workout_list">Workout List</string>
     <string name="add_workout">Add Workout</string>
     <string name="save_workout">Save Workout</string>
 </resources>

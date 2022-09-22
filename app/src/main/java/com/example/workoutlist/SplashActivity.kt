@@ -9,6 +9,6 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
         supportActionBar?.hide()
 
-        final Intent i = new Intent(SplashActivity, MainActivity)
+        // final Intent i = new Intent(SplashActivity, MainActivity)
     }
 }
