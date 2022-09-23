@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.addWorkoutBtn.setOnClickListener { launchAddWorkout() }
+        binding.doneBtn.setOnClickListener { launchDone() }
     }
     override fun onResume() {
         super.onResume()
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun launchAddWorkout() {
         listIntent = Intent(this, NewWorkoutActivity::class.java)
+        startActivity(listIntent)
+    }
+
+    private fun launchDone() {
+        listIntent = Intent(this, DoneActivity::class.java)
         startActivity(listIntent)
     }
 }

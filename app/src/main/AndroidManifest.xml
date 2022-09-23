@@ -21,6 +21,13 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
+            android:name=".DoneActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="false">
         </activity>

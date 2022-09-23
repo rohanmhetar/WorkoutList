@@ -4,24 +4,20 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.workoutlist.MainActivity
 import com.example.workoutlist.R
 import com.example.workoutlist.data.DataSource
 import com.example.workoutlist.model.Workout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.NonDisposableHandle.parent
 
-class CardAdapter(
+class DoneCardAdapter(
     private val context: Context?
-): RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
+): RecyclerView.Adapter<DoneCardAdapter.CardViewHolder>() {
 
     // import data from DataSource.kt
-    private val data: MutableList<Workout> = DataSource.workouts
+    private val data: MutableList<Workout> = DataSource.done
 
     /**
      * Initialize view elements
@@ -31,20 +27,19 @@ class CardAdapter(
         val workoutDate: TextView = view!!.findViewById(R.id.workoutDate)
         val numReps: TextView = view!!.findViewById(R.id.numReps)
         val deleteBtn: FloatingActionButton = view!!.findViewById(R.id.deleteButton)
-        val doneBtn: FloatingActionButton = view!!.findViewById(R.id.doneButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         // determine the layout type and set it accordingly using a conditional
         val adapterLayout = LayoutInflater.from(parent.context)
-                .inflate(R.layout.workout_layout, parent, false)
+            .inflate(R.layout.done_layout, parent, false)
 
         return CardViewHolder(adapterLayout)
     }
 
     override fun getItemCount(): Int = data.size
 
-    override fun onBindViewHolder(holder: CardAdapter.CardViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DoneCardAdapter.CardViewHolder, position: Int) {
         val resources = context?.resources
 
         // set corresponding resources from data list
@@ -54,19 +49,7 @@ class CardAdapter(
         holder.numReps.text = item.reps.toString() + " reps"
 
         holder.deleteBtn.setOnClickListener {
-            DataSource.workouts.remove(item)
-            this.notifyDataSetChanged() }
-
-        holder.doneBtn.setOnClickListener {
-            DataSource.done.add(0,
-                Workout(
-                    item.name,
-                    item.date,
-                    item.reps,
-                    0
-                )
-            )
-            DataSource.workouts.remove(item)
+            DataSource.done.remove(item)
             this.notifyDataSetChanged() }
     }
 }

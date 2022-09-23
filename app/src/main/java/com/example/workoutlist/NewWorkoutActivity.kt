@@ -42,7 +42,7 @@ class NewWorkoutActivity : AppCompatActivity() {
                 R.string.empty_fields, Snackbar.LENGTH_LONG)
             errorSB.show()
         } else {
-            DataSource.workouts.add(
+            DataSource.workouts.add(0,
                 Workout(
                     workoutNameInput.getText().toString().trim(),
                     workoutDateVal,

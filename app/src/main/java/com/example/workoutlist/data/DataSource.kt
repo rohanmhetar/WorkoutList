@@ -19,4 +19,12 @@ object DataSource {
             3
         )
     )
+    val done: MutableList<Workout> = mutableListOf(
+        Workout(
+            "Bench Press",
+            "9/21/2022",
+            20,
+            0
+        )
+    )
 }
