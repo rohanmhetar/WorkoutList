@@ -20,12 +20,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.addWorkoutBtn.setOnClickListener { launchAddWorkout() }
+    }
+
+    override fun onResume() {
+        super.onResume()
         binding.workoutRecyclerView.adapter = CardAdapter(applicationContext)
 
         // Specify fixed size to improve performance
         binding.workoutRecyclerView.setHasFixedSize(true)
-
-        binding.addWorkoutBtn.setOnClickListener { launchAddWorkout() }
     }
 
     private fun launchAddWorkout() {

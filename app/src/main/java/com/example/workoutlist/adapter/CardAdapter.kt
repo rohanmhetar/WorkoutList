@@ -16,7 +16,7 @@ class CardAdapter(
 ): RecyclerView.Adapter<CardAdapter.CardViewHolder>() {
 
     // import data from DataSource.kt
-    private val data: List<Workout> = DataSource.workouts
+    private val data: MutableList<Workout> = DataSource.workouts
 
     /**
      * Initialize view elements
@@ -44,6 +44,6 @@ class CardAdapter(
         val item = data[position]
         holder.workoutName.text = item.name
         holder.workoutDate.text = item.date
-        holder.numReps.text = item.reps.toString()
+        holder.numReps.text = item.reps.toString() + " reps"
     }
 }
