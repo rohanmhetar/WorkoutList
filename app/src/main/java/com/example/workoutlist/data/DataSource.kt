@@ -9,12 +9,14 @@ object DataSource {
         Workout(
             "Squats",
             "9/22/2022",
-            20
+            20,
+            2
         ),
         Workout(
             "Burpees",
             "9/23/2022",
-            50
+            50,
+            3
         )
     )
 }

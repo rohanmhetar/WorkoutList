@@ -43,12 +43,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:calendarViewShown="false"
         android:datePickerMode="spinner"
         android:headerBackground="@color/teal_200"
         app:layout_constraintBottom_toTopOf="@+id/submitBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workoutRepInput" />
+        app:layout_constraintTop_toBottomOf="@+id/priority_options" />
 
     <EditText
         android:id="@+id/workoutRepInput"
@@ -80,47 +81,50 @@
         android:id="@+id/priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/workoutRepInput"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="Priority"
-        />
+        android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/workoutRepInput" />
 
     <RadioGroup
         android:id="@+id/priority_options"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:checkedButton="@id/priority_one"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/workoutDatePicker"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/priority"
-        android:layout_marginStart="16dp"
-        >
+        app:layout_constraintTop_toBottomOf="@id/priority">
 
         <RadioButton
             android:id="@+id/priority_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="P1" />
+            android:text="1" />
 
         <RadioButton
             android:id="@+id/priority_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="P2" />
+            android:text="2" />
 
         <RadioButton
             android:id="@+id/priority_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="P3" />
+            android:text="3" />
 
         <RadioButton
             android:id="@+id/priority_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="P4" />
+            android:text="4" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

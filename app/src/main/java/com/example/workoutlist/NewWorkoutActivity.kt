@@ -2,10 +2,7 @@ package com.example.workoutlist
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NavUtils
 import com.example.workoutlist.data.DataSource
@@ -31,6 +28,10 @@ class NewWorkoutActivity : AppCompatActivity() {
         val workoutDateInput = findViewById<DatePicker>(R.id.workoutDatePicker)
         val workoutRepInput = findViewById<EditText>(R.id.workoutRepInput)
 
+        val workoutPriorityGroup = findViewById<RadioGroup>(R.id.priority_options)
+        val prioritySelected = workoutPriorityGroup.checkedRadioButtonId
+        val workoutPriorityInput = findViewById<RadioButton>(prioritySelected)
+
         val workoutDateVal = "" + workoutDateInput.getMonth() +
                 "/" + workoutDateInput.getDayOfMonth() +
                 "/" + workoutDateInput.getYear()
@@ -45,9 +46,11 @@ class NewWorkoutActivity : AppCompatActivity() {
                 Workout(
                     workoutNameInput.getText().toString().trim(),
                     workoutDateVal,
-                    workoutRepInput.getText().toString().trim().toInt()
+                    workoutRepInput.getText().toString().trim().toInt(),
+                    workoutPriorityInput.getText().toString().trim().toInt()
                 )
             )
+            DataSource.workouts.sortBy { it.priority }
             finish()
         }
     }
