@@ -2,12 +2,17 @@ package com.example.workoutlist
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.DatePicker
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.workoutlist.adapter.CardAdapter
+import com.example.workoutlist.data.DataSource
 import com.example.workoutlist.databinding.ActivityMainBinding
+import com.example.workoutlist.model.Workout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.addWorkoutBtn.setOnClickListener { launchAddWorkout() }
     }
-
     override fun onResume() {
         super.onResume()
         binding.workoutRecyclerView.adapter = CardAdapter(applicationContext)

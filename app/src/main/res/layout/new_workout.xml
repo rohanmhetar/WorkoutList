@@ -76,4 +76,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/workoutRepInput"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Priority"
+        />
+
+    <RadioGroup
+        android:id="@+id/priority_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/priority_one"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priority"
+        android:layout_marginStart="16dp"
+        >
+
+        <RadioButton
+            android:id="@+id/priority_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P1" />
+
+        <RadioButton
+            android:id="@+id/priority_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P2" />
+
+        <RadioButton
+            android:id="@+id/priority_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P3" />
+
+        <RadioButton
+            android:id="@+id/priority_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="P4" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
