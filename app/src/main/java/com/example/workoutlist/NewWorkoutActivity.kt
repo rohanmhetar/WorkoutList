@@ -1,13 +1,9 @@
 package com.example.workoutlist
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NavUtils
 import com.example.workoutlist.data.DataSource
-import com.example.workoutlist.databinding.ActivityMainBinding
-import com.example.workoutlist.databinding.NewWorkoutBinding
 import com.example.workoutlist.model.Workout
 import com.google.android.material.snackbar.Snackbar
 

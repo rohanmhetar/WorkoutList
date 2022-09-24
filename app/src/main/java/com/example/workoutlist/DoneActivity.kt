@@ -1,13 +1,10 @@
 package com.example.workoutlist
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.workoutlist.adapter.CardAdapter
 import com.example.workoutlist.adapter.DoneCardAdapter
 import com.example.workoutlist.data.DataSource
 import com.example.workoutlist.databinding.ActivityDoneBinding
-import com.example.workoutlist.databinding.ActivityMainBinding
 
 class DoneActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDoneBinding
@@ -21,6 +18,7 @@ class DoneActivity : AppCompatActivity() {
         // Enable up button for backward navigation
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        // enable functionality for delete all button
         binding.deleteAllBtn.setOnClickListener { deleteAll() }
     }
     override fun onResume() {
@@ -31,6 +29,9 @@ class DoneActivity : AppCompatActivity() {
         binding.doneRecyclerView.setHasFixedSize(true)
     }
 
+    /*
+     * Clear all workout entries from done list and refresh recycler view
+     */
     private fun deleteAll() {
         DataSource.done.clear()
         binding.doneRecyclerView.adapter?.notifyDataSetChanged()

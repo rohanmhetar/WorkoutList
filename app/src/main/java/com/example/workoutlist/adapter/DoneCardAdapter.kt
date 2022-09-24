@@ -10,7 +10,6 @@ import com.example.workoutlist.R
 import com.example.workoutlist.data.DataSource
 import com.example.workoutlist.model.Workout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class DoneCardAdapter(
     private val context: Context?
@@ -48,6 +47,7 @@ class DoneCardAdapter(
         holder.workoutDate.text = item.date
         holder.numReps.text = item.reps.toString() + " reps"
 
+        // enable functionality for delete button
         holder.deleteBtn.setOnClickListener {
             DataSource.done.remove(item)
             this.notifyDataSetChanged() }

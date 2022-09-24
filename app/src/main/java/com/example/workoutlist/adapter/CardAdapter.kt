@@ -4,17 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.workoutlist.MainActivity
 import com.example.workoutlist.R
 import com.example.workoutlist.data.DataSource
 import com.example.workoutlist.model.Workout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.NonDisposableHandle.parent
 
 class CardAdapter(
     private val context: Context?
@@ -53,10 +48,12 @@ class CardAdapter(
         holder.workoutDate.text = item.date
         holder.numReps.text = item.reps.toString() + " reps"
 
+        // enable functionality for delete button
         holder.deleteBtn.setOnClickListener {
             DataSource.workouts.remove(item)
             this.notifyDataSetChanged() }
 
+        // enable functionality for done button
         holder.doneBtn.setOnClickListener {
             DataSource.done.add(0,
                 Workout(

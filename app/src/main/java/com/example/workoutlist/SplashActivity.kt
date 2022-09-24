@@ -3,7 +3,6 @@ package com.example.workoutlist
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.coroutines.delay
 
 
 class SplashActivity : AppCompatActivity() {
